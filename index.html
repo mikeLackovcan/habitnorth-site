@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>HabitNorth — Tasks & Habits</title>
-<meta name="description" content="One miss never breaks your streak. HabitNorth brings daily tasks and lasting habits into one clear place. Small steps. Clear direction.">
+<meta name="description" content="One miss never breaks your streak. Daily tasks and lasting habits in one clear place. Small steps. Clear direction.">
 <meta property="og:title" content="HabitNorth — Small steps. Clear direction.">
 <meta property="og:description" content="One miss never breaks your streak. Habits that survive real life.">
 <meta property="og:image" content="https://habitnorth.com/assets/share.png">
@@ -12,84 +12,47 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
   :root{--forest:#163E35;--lime:#D5EDAA;--paper:#F7F8F3;--ink:#15241E;--sage:#62756C}
   *{box-sizing:border-box}
-  body{margin:0;font-family:Manrope,system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.5}
+  body{margin:0;font-family:Manrope,system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
   a{color:var(--forest)}
-  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-  header{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
-  header img{height:38px}
-  header nav a{margin-left:22px;text-decoration:none;font-weight:600;font-size:15px}
-  .hero{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;padding:48px 0 32px}
-  .hero h1{font-size:clamp(38px,6vw,64px);line-height:1.08;margin:0 0 16px;color:var(--forest);font-weight:800;letter-spacing:-0.02em}
-  .hero p.lead{font-size:20px;color:var(--sage);margin:0 0 28px}
-  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--forest);color:#fff;text-decoration:none;font-weight:700;padding:16px 22px;border-radius:12px;font-size:16px}
-  .btn svg{width:22px;height:22px}
-  .btn.secondary{background:transparent;color:var(--forest);border:2px solid var(--forest)}
-  .hero .art img{width:100%;border-radius:20px;box-shadow:0 20px 60px rgba(22,62,53,.14)}
-  .note{font-size:14px;color:var(--sage);margin-top:14px}
-  .band{background:var(--forest);color:var(--paper);padding:56px 0;margin-top:40px}
-  .band h2{color:var(--lime);font-size:clamp(26px,4vw,36px);margin:0 0 8px;line-height:1.15}
-  .band p{color:rgba(247,248,243,.85);max-width:640px;margin:0}
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:48px 0}
-  .card{background:#fff;border:1px solid rgba(22,62,53,.10);border-radius:20px;padding:24px}
-  .card h3{margin:0 0 8px;color:var(--forest);font-size:19px}
-  .card p{margin:0;color:var(--sage);font-size:15px}
-  .card .k{display:inline-block;background:var(--lime);color:var(--forest);font-weight:700;font-size:12px;letter-spacing:.06em;padding:4px 10px;border-radius:999px;margin-bottom:12px}
-  .cta{text-align:center;padding:24px 0 64px}
-  footer{border-top:1px solid rgba(22,62,53,.10);padding:28px 0 48px;font-size:14px;color:var(--sage)}
-  footer a{margin-right:18px}
-  @media (max-width:820px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}header nav a{margin-left:14px}}
+  main{max-width:760px;margin:0 auto;padding:56px 20px 64px;text-align:center}
+  .logo{height:56px;margin-bottom:28px}
+  h1{font-size:clamp(34px,6vw,52px);line-height:1.1;margin:0 0 14px;color:var(--forest);font-weight:800;letter-spacing:-0.02em}
+  p{font-size:18px;color:var(--sage);margin:0 auto 12px;max-width:600px}
+  .btn{display:inline-block;background:var(--forest);color:#fff;text-decoration:none;font-weight:700;padding:16px 26px;border-radius:12px;font-size:16px;margin:22px 0 8px}
+  .small{font-size:14px}
+  .shots{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:48px 0 8px}
+  .shots img{width:100%;border-radius:18px;border:1px solid rgba(22,62,53,.12);background:#fff}
+  .shots figure{margin:0}
+  .shots figcaption{font-size:14px;color:var(--sage);margin-top:8px}
+  footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(22,62,53,.12);font-size:14px;color:var(--sage)}
+  footer a{margin:0 10px}
+  @media (max-width:640px){.shots{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <a href="/" aria-label="HabitNorth home"><img src="/assets/logo.png" alt="HabitNorth"></a>
-    <nav><a href="#why">Why</a><a href="/privacy">Privacy</a><a href="mailto:mike.fecko@gmail.com">Contact</a></nav>
-  </header>
+<main>
+  <img class="logo" src="/assets/logo.png" alt="HabitNorth">
+  <h1>One miss never breaks your streak.</h1>
+  <p>HabitNorth brings your daily tasks and the habits you want to keep into one calm place. Miss a day and nothing you built is lost — the next day simply pays double. Twenty habits come with a plan ready, reminders have their own sound, and at the end of the day you watch your team cross the mountain.</p>
+  <p class="small">Android · Free · No ads, no tracking, no guilt.</p>
+  <a class="btn" href="https://play.google.com/store/apps/details?id=com.mikefecko.habittracker">Get it on Google Play</a>
 
-  <section class="hero">
-    <div>
-      <h1>One miss never breaks your streak.</h1>
-      <p class="lead">Daily tasks and lasting habits in one clear place. Built on what the research says, not on guilt.</p>
-      <a class="btn" href="https://play.google.com/store/apps/details?id=com.mikefecko.habittracker">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.3 13.2 12l-9.6 9.7c-.4-.2-.6-.6-.6-1.1V3.4c0-.5.2-.9.6-1.1zm11 8.2L5.3 2.2l10.9 6.3-1.6 2zm0 3 1.6 2-10.9 6.3 9.3-8.3zm1.8-1.5 3.3-1.9c1.1-.6 1.1-1.6 0-2.2L16.4 6l-2 2 2 2z"/></svg>
-        Get it on Google Play
-      </a>
-      <p class="note">Android · Free · No ads, no tracking</p>
-    </div>
-    <div class="art"><img src="/assets/feature.png" alt="Small steps. Clear direction. Rounded steps rising toward a north arrow."></div>
-  </section>
-</div>
-
-<section class="band" id="why">
-  <div class="wrap">
-    <h2>A miss is a designed state, not a failure.</h2>
-    <p>One missed day changes nothing. Two in a row ends a run. So the day after a miss is a recovery day — and it pays double. Nothing you build can be lost in a bad week.</p>
-  </div>
-</section>
-
-<div class="wrap">
-  <section class="grid">
-    <div class="card"><span class="k">PLAN</span><h3>Twenty habits, each with a plan</h3><p>Pick what to build or break. Every one comes with when, the smallest version that counts, what gets in the way, and one thing to set up tonight.</p></div>
-    <div class="card"><span class="k">DAY</span><h3>Your day, in order</h3><p>Tasks and routines on one timeline by the clock, with a countdown to the next. A cleared task stays where it was, struck through. No takeovers.</p></div>
-    <div class="card"><span class="k">EXPEDITION</span><h3>Watch your team cross the mountain</h3><p>At day's end, every habit and task is a climber: the finished ones over the summit, the rest still on the ascent.</p></div>
-    <div class="card"><span class="k">SOUND</span><h3>Reminders with their own sound</h3><p>Each habit gets a tone of its own, so you know what is calling before you look. Anchor it to something you already do.</p></div>
-    <div class="card"><span class="k">YOURS</span><h3>Your data stays yours</h3><p>Everything lives on your phone. Sign in only for a cloud backup or a new phone — and delete both with one tap.</p></div>
-    <div class="card"><span class="k">CALM</span><h3>No ads. No feed. No guilt.</h3><p>Small steps. Clear direction.</p></div>
+  <!-- Screenshots: real captures from the app go in /screenshots as 01.png … 03.png. -->
+  <section class="shots" id="screenshots" hidden>
+    <figure><img src="/screenshots/01.png" alt="Today, with a recovery day"><figcaption>One miss never breaks it</figcaption></figure>
+    <figure><img src="/screenshots/02.png" alt="The Habits library"><figcaption>Twenty habits, each with a plan</figcaption></figure>
+    <figure><img src="/screenshots/03.png" alt="The expedition"><figcaption>Watch your team cross the mountain</figcaption></figure>
   </section>
 
-  <section class="cta">
-    <a class="btn" href="https://play.google.com/store/apps/details?id=com.mikefecko.habittracker">Get it on Google Play</a>
-  </section>
-</div>
-
-<footer><div class="wrap">
-  <a href="/privacy">Privacy policy</a><a href="/privacy#deleting-your-data">Delete your data</a><a href="mailto:mike.fecko@gmail.com">mike.fecko@gmail.com</a>
-  <div style="margin-top:10px">© 2026 HabitNorth · Michal Fecko</div>
-</div></footer>
+  <footer>
+    <div>Support: <a href="mailto:mike.fecko@gmail.com">mike.fecko@gmail.com</a></div>
+    <div style="margin-top:8px"><a href="/privacy">Privacy policy</a>·<a href="/privacy#deleting-your-data">Delete your data</a></div>
+    <div style="margin-top:8px">© 2026 HabitNorth</div>
+  </footer>
+</main>
 </body>
 </html>
