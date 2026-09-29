@@ -4,55 +4,169 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>HabitNorth — Tasks & Habits</title>
-<meta name="description" content="One miss never breaks your streak. Daily tasks and lasting habits in one clear place. Small steps. Clear direction.">
+<meta name="description" content="One miss never breaks your streak. Daily tasks and lasting habits in one calm place. Small steps. Clear direction.">
 <meta property="og:title" content="HabitNorth — Small steps. Clear direction.">
 <meta property="og:description" content="One miss never breaks your streak. Habits that survive real life.">
 <meta property="og:image" content="https://habitnorth.com/assets/share.png">
 <meta property="og:url" content="https://habitnorth.com/">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#163E35">
 <link rel="icon" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{--forest:#163E35;--lime:#D5EDAA;--paper:#F7F8F3;--ink:#15241E;--sage:#62756C}
+  :root{--forest:#163E35;--forest-2:#1E4F44;--lime:#D5EDAA;--lime-2:#EAF5D3;--paper:#F7F8F3;--ink:#15241E;--sage:#62756C;--line:rgba(22,62,53,.12);--r-card:20px;--r-ctl:12px}
   *{box-sizing:border-box}
-  body{margin:0;font-family:Manrope,system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Manrope,system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
   a{color:var(--forest)}
-  main{max-width:760px;margin:0 auto;padding:56px 20px 64px;text-align:center}
-  .logo{height:56px;margin-bottom:28px}
-  h1{font-size:clamp(34px,6vw,52px);line-height:1.1;margin:0 0 14px;color:var(--forest);font-weight:800;letter-spacing:-0.02em}
-  p{font-size:18px;color:var(--sage);margin:0 auto 12px;max-width:600px}
-  .btn{display:inline-block;background:var(--forest);color:#fff;text-decoration:none;font-weight:700;padding:16px 26px;border-radius:12px;font-size:16px;margin:22px 0 8px}
-  .small{font-size:14px}
-  .shots{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:48px 0 8px}
-  .shots img{width:100%;border-radius:18px;border:1px solid rgba(22,62,53,.12);background:#fff}
-  .shots figure{margin:0}
-  .shots figcaption{font-size:14px;color:var(--sage);margin-top:8px}
-  footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(22,62,53,.12);font-size:14px;color:var(--sage)}
-  footer a{margin:0 10px}
-  @media (max-width:640px){.shots{grid-template-columns:1fr}}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* header */
+  header{position:sticky;top:0;z-index:5;background:rgba(247,248,243,.85);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:84px}
+  header img{height:52px;width:auto}
+  header nav{display:flex;gap:6px}
+  header nav a{text-decoration:none;font-weight:600;font-size:15px;padding:10px 14px;border-radius:999px}
+  header nav a:hover{background:var(--lime-2)}
+  header nav a.primary{background:var(--forest);color:#fff}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:72px 0 48px}
+  .eyebrow{display:inline-block;background:var(--lime);color:var(--forest);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:999px;margin-bottom:18px}
+  h1{font-size:clamp(30px,4.2vw,44px);line-height:1.12;margin:0 0 16px;color:var(--forest);font-weight:800;letter-spacing:-0.015em}
+  .lead{font-size:18px;color:var(--sage);margin:0 0 26px;max-width:520px}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--forest);color:#fff;text-decoration:none;font-weight:700;padding:15px 22px;border-radius:var(--r-ctl);font-size:16px;transition:transform .12s ease,background .12s ease}
+  .btn:hover{background:var(--forest-2);transform:translateY(-1px)}
+  .btn svg{width:20px;height:20px;fill:currentColor}
+  .under{font-size:14px;color:var(--sage);margin-top:14px}
+  .phone{justify-self:center;width:min(320px,80vw);aspect-ratio:9/19.5;border-radius:38px;background:#0E1014;padding:10px;box-shadow:0 30px 80px rgba(22,62,53,.22),0 0 0 1px rgba(0,0,0,.35)}
+  .phone img,.phone .empty{width:100%;height:100%;object-fit:cover;border-radius:30px;display:block;background:#0E1014}
+  .phone .empty{display:flex;align-items:center;justify-content:center;color:#8A90A0;font-size:14px;text-align:center;padding:20px}
+
+  /* band */
+  .band{background:var(--forest);color:var(--paper);padding:64px 0}
+  .band .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .band h2{color:var(--lime);font-size:clamp(24px,3.2vw,32px);line-height:1.15;margin:0 0 10px;font-weight:800}
+  .band p{color:rgba(247,248,243,.82);margin:0;font-size:17px}
+  .steps{display:flex;align-items:flex-end;gap:10px;justify-self:end}
+  .steps span{display:block;width:88px;height:26px;background:var(--lime);border-radius:8px}
+  .steps span:nth-child(2){height:52px}.steps span:nth-child(3){height:78px}
+  .steps .arrow{width:0;height:0;border-left:22px solid transparent;border-right:22px solid transparent;border-bottom:34px solid var(--lime);background:none;border-radius:0}
+
+  /* features */
+  section.features{padding:64px 0 24px}
+  .sec-title{font-size:clamp(24px,3vw,30px);color:var(--forest);font-weight:800;margin:0 0 6px;letter-spacing:-0.01em}
+  .sec-sub{color:var(--sage);margin:0 0 28px;font-size:17px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--r-card);padding:24px;transition:transform .15s ease,box-shadow .15s ease}
+  .card:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(22,62,53,.10)}
+  .card .ic{width:44px;height:44px;border-radius:12px;background:var(--lime-2);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .card .ic svg{width:22px;height:22px;stroke:var(--forest);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{margin:0 0 6px;color:var(--forest);font-size:18px;font-weight:700}
+  .card p{margin:0;color:var(--sage);font-size:15px}
+
+  /* screenshots */
+  section.shots{padding:40px 0 64px}
+  .shot-row{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .shot{margin:0;text-align:center}
+  .shot .frame{border-radius:30px;background:#0E1014;padding:8px;box-shadow:0 18px 44px rgba(22,62,53,.16)}
+  .shot img{width:100%;display:block;border-radius:24px;background:#0E1014}
+  .shot figcaption{margin-top:12px;font-weight:600;color:var(--forest)}
+
+  /* faq */
+  section.faq{padding:24px 0 64px}
+  details{background:#fff;border:1px solid var(--line);border-radius:var(--r-ctl);padding:16px 20px;margin-bottom:10px}
+  summary{cursor:pointer;font-weight:700;color:var(--forest);list-style:none}
+  summary::-webkit-details-marker{display:none}
+  details p{margin:10px 0 0;color:var(--sage)}
+
+  /* cta + footer */
+  .cta{text-align:center;padding:24px 0 72px}
+  .cta h2{font-size:clamp(24px,3vw,32px);color:var(--forest);margin:0 0 18px;font-weight:800}
+  footer{border-top:1px solid var(--line);padding:28px 0 56px;font-size:14px;color:var(--sage)}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
+  footer a{margin-right:18px}
+
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr;padding:48px 0 32px;text-align:center}
+    .lead{margin-left:auto;margin-right:auto}
+    .band .wrap{grid-template-columns:1fr}.steps{justify-self:center}
+    .grid,.shot-row{grid-template-columns:1fr}
+    header nav a:not(.primary){display:none}
+  }
 </style>
 </head>
 <body>
-<main>
-  <img class="logo" src="/assets/logo.png" alt="HabitNorth">
-  <h1>One miss never breaks your streak.</h1>
-  <p>HabitNorth brings your daily tasks and the habits you want to keep into one calm place. Miss a day and nothing you built is lost — the next day simply pays double. Twenty habits come with a plan ready, reminders have their own sound, and at the end of the day you watch your team cross the mountain.</p>
-  <p class="small">Android · Free · No ads, no tracking, no guilt.</p>
-  <a class="btn" href="https://play.google.com/store/apps/details?id=com.mikefecko.habittracker">Get it on Google Play</a>
+<header><div class="wrap">
+  <a href="/" aria-label="HabitNorth"><img src="/assets/logo.png" alt="HabitNorth"></a>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#screens">Screens</a>
+    <a href="#faq">FAQ</a>
+    <a class="primary" href="https://play.google.com/store/apps/details?id=com.mikefecko.habittracker">Get the app</a>
+  </nav>
+</div></header>
 
-  <!-- Screenshots: real captures from the app go in /screenshots as 01.png … 03.png. -->
-  <section class="shots" id="screenshots" hidden>
-    <figure><img src="/screenshots/01.png" alt="Today, with a recovery day"><figcaption>One miss never breaks it</figcaption></figure>
-    <figure><img src="/screenshots/02.png" alt="The Habits library"><figcaption>Twenty habits, each with a plan</figcaption></figure>
-    <figure><img src="/screenshots/03.png" alt="The expedition"><figcaption>Watch your team cross the mountain</figcaption></figure>
+<main>
+  <section class="hero wrap">
+    <div>
+      <span class="eyebrow">Tasks &amp; Habits · Android</span>
+      <h1>One miss never breaks your streak.</h1>
+      <p class="lead">Your daily tasks and the habits you want to keep, in one calm place. Miss a day and nothing you built is lost — the next day simply pays double.</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.mikefecko.habittracker">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.3 13.2 12l-9.6 9.7c-.4-.2-.6-.6-.6-1.1V3.4c0-.5.2-.9.6-1.1zm11 8.2L5.3 2.2l10.9 6.3-1.6 2zm0 3 1.6 2-10.9 6.3 9.3-8.3zm1.8-1.5 3.3-1.9c1.1-.6 1.1-1.6 0-2.2L16.4 6l-2 2 2 2z"/></svg>
+        Get it on Google Play
+      </a>
+      <div class="under">Free · No ads · No tracking · No guilt</div>
+    </div>
+    <div class="phone"><!--HERO--><div class="empty">Screenshot coming</div><!--/HERO--></div>
   </section>
 
-  <footer>
-    <div>Support: <a href="mailto:mike.fecko@gmail.com">mike.fecko@gmail.com</a></div>
-    <div style="margin-top:8px"><a href="/privacy">Privacy policy</a>·<a href="/privacy#deleting-your-data">Delete your data</a></div>
-    <div style="margin-top:8px">© 2026 HabitNorth</div>
-  </footer>
+  <section class="band"><div class="wrap">
+    <div>
+      <h2>A miss is a designed state, not a failure.</h2>
+      <p>One missed day changes nothing. Two in a row ends a run. So the day after a miss is a recovery day, and it pays double. Your practice, your level and your history only ever go up.</p>
+    </div>
+    <div class="steps" aria-hidden="true"><span></span><span></span><span></span><span class="arrow"></span></div>
+  </div></section>
+
+  <section class="features wrap" id="features">
+    <h2 class="sec-title">Built on what the research says</h2>
+    <p class="sec-sub">Every mechanism traces to a finding. Nothing here is decoration.</p>
+    <div class="grid">
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 19h16M6 15V9m6 6V5m6 10v-4"/></svg></div><h3>Twenty habits, each with a plan</h3><p>Pick what to build or break. Each comes with when, the smallest version that counts, what gets in the way, and one thing to set up tonight.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Your day, in order</h3><p>Tasks and routines on one timeline by the clock, with a countdown to the next. A cleared task stays where it was, struck through.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 20l6-11 4 6 3-4 5 9z"/></svg></div><h3>Watch your team cross the mountain</h3><p>At day's end, every habit and task is a climber — the finished ones over the summit, the rest still on the ascent.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 17V9a6 6 0 0112 0v8l2 2H4zM10 21h4"/></svg></div><h3>Reminders with their own sound</h3><p>Each habit gets a tone of its own, so you know what's calling before you look. Anchor it to something you already do.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="3"/><path d="M8 5V3m8 2V3M4 10h16"/></svg></div><h3>A calm look back</h3><p>Morning and evening check-ins, a year view, and a focus timer with a rest prompt after.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7z"/></svg></div><h3>Your data stays yours</h3><p>Everything lives on your phone. Sign in only for a cloud backup or a new phone — and delete both with one tap.</p></div>
+    </div>
+  </section>
+
+  <section class="shots wrap" id="screens"><!--SHOTS-->
+    <h2 class="sec-title">Screens</h2>
+    <p class="sec-sub">Real captures from the app are on their way.</p>
+  <!--/SHOTS--></section>
+
+  <section class="faq wrap" id="faq">
+    <h2 class="sec-title">Questions</h2>
+    <details><summary>What happens when I miss a day?</summary><p>Nothing breaks. One miss is forgiven; the next day is a recovery day and pays double. Only two misses in a row end a run.</p></details>
+    <details><summary>Do I need an account?</summary><p>No. Everything works on your phone without one. An account is only for a cloud backup or moving to a new phone.</p></details>
+    <details><summary>Is it free?</summary><p>Yes. No ads, no tracking, no subscription.</p></details>
+    <details><summary>How do I delete my data?</summary><p>Profile → Erase everything removes it from the phone. Profile → Cloud → Delete account removes the account and backup. <a href="/privacy#deleting-your-data">Details</a>.</p></details>
+  </section>
+
+  <section class="cta wrap">
+    <h2>Small steps. Clear direction.</h2>
+    <a class="btn" href="https://play.google.com/store/apps/details?id=com.mikefecko.habittracker">Get it on Google Play</a>
+  </section>
 </main>
+
+<footer><div class="wrap">
+  <div><a href="/privacy">Privacy policy</a><a href="/privacy#deleting-your-data">Delete your data</a><a href="mailto:support@habitnorth.com">support@habitnorth.com</a></div>
+  <div>© 2026 HabitNorth</div>
+</div></footer>
 </body>
 </html>
